@@ -1,0 +1,509 @@
+/*
+styles: Module to set the display options of the app
+=============================================
+
+.. moduleauthor:: Lilian MAREY <lilian.marey@ensae.fr> 
+*/
+@font-face {
+  font-family: Avenir;
+  src: local("Avenir"),
+       local("Avenir-bold"),
+       url(AvenirLTStd-Book.otf);
+  font-weight: bold;
+}
+
+html {
+  font-size: 89.5%; 
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  height: 100vh;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 100; 
+  font-size: 3.1rem; 
+  line-height: 1.6; 
+  letter-spacing: 0.2rem; 
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 300; 
+  font-size: 1.9rem; 
+  line-height: 1; 
+  letter-spacing: -.1rem; 
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 300; 
+  font-size: 1.1rem; 
+  line-height: 1; 
+  letter-spacing: 0rem; 
+}
+
+h5 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-weight: 100; 
+  font-size: 2.1rem; 
+  line-height: 1; 
+  letter-spacing: 0.2rem; 
+  font-family: Avenir;
+}
+  
+p {
+  margin-top: 0;
+}
+
+hr {
+  position: absolute;
+  left: 0%;
+  top: 15%;
+  width: 100%;
+  height : 7%;
+  background-position: left;
+}
+  
+.header {
+  position: absolute;
+  left: 11%;
+  top: 0%;
+  width: 85%;
+  height : 7%;
+  background-color: rgb(0, 106, 141);
+  color: rgb(255, 255, 255);
+  font-family:Avenir;
+  text-align: center;
+}
+
+.logo0 {
+  position: absolute;
+  left: .5%;
+  top: .75%;
+  height: 5.5%;
+  width: 10%;
+  background-color: rgb(255, 255, 255);
+  margin-top: 0%;
+}
+
+.logo1 {
+  position: absolute;
+  left: 91.5%;
+  top: 0%;
+  height: 7%;
+  width: 8.5%;
+  background-color: rgb(255, 255, 255);
+}
+
+.fill_void {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  height: 7%;
+  width: 11%;
+  background-color: rgb(255, 255, 255);
+}
+
+.rectangle_top {
+  position: absolute;
+  left: 24.5%;
+  top: 8.5%;
+  height: 14%;
+  width: 74%;
+  background-color: rgb(255, 255, 255);
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(188,188,188);
+}
+
+
+.rectangle_left {
+  position: absolute;
+  left: 1.25%;
+  top: 24%;
+  height: 71.5%;
+  width: 21.75%;
+  background-color: rgb(255, 255, 255);
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(188,188,188);
+}
+
+.rectangle_corner {
+  position: absolute;
+  left: 1.25%;
+  top: 8.5%;
+  height: 14%;
+  width: 21.75%;
+  background-color: rgb(255, 255, 255);
+  border-style: double;
+  border-width: 6px;
+  border-color: rgb(188,188,188);
+}
+
+.description1 {
+  position: absolute;
+  left: 2.75%;
+  top: 9%;
+  width: 18%;
+  font-family: Avenir;
+  text-align: center;
+}
+
+.description2 {
+  position: absolute;
+  left: 2.25%;
+  top: 14.5%;
+  width: 18%;
+  font-family: Avenir;
+  font-size: small;
+  text-align: left;
+}
+
+.select_map {
+  position: absolute;
+  left: 16%;
+  top: 14%;
+  width: 7%;
+  height: 3%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align: left;
+}
+
+.description3 {
+  position: absolute;
+  left: 75%;
+  top: 96%;
+  width: 25%;
+  font-family: Avenir;
+  font-size: medium;
+  text-align: center;
+}
+
+.country_column_title {
+  position: absolute;
+  left: 1.75%;
+  top: 45%;
+  width: 11%;
+  height: 2%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: large;
+  text-align:center;
+}
+
+.country_column {
+  position: absolute;
+  left: 1.75%;
+  top: 47%;
+  width: 10.5%;
+  height: 48.5%;
+  background-color: rgb(0, 131, 138);
+  border: 0px  outset rgb(52, 159, 192);
+  font-family: Avenir;
+  font-size: large;
+  
+}
+
+.region_column_title {
+  position: absolute;
+  left: 12.5%;
+  top: 45%;
+  width: 10.5%;
+  height: 2%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: large;
+  text-align:center;
+}
+
+.region_column {
+  position: absolute;
+  left: 12.5%;
+  top: 47%;  
+  width: 10.5%;
+  height: 48.5%;
+  background-color: rgb(188, 188, 188);
+  border: 0px outset rgb(175, 37, 37);
+  font-family: Avenir;
+  font-size: large;
+}
+
+.age_row_title {
+  position: absolute;
+  left: 1.75%;
+  top: 25.5%;
+  width: 11%;
+  height: 1%;
+  background-color:transparent;
+  border: 0px  outset rgb(52, 159, 192);
+  font-family: Avenir;
+  font-size: large;
+  text-align: left;
+}
+
+.age_row {
+  position: absolute;
+  left: 1.75%;
+  top: 27.5%;
+  width: 21.25%;
+  height: 12%;
+  background-color: white;
+  border: 0px  outset rgb(52, 159, 192);
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.metric_row_title {
+  position: absolute;
+  left: 26.5%;
+  top: 9.5%;
+  width: 13%;
+  height: 1.5%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.metric_row {
+  position: absolute;
+  left: 26.5%;
+  top: 11.5%;
+  width: 13%;
+  height: 9%;
+  border: 0px inset rgb(195, 22, 129); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.time_scale_row_title {
+  position: absolute;
+  left: 42%;
+  top: 9.5%;
+  width: 10%;
+  height: 1.5%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align:center;
+}
+
+.time_scale_row {
+  position: absolute;
+  left: 42%;
+  top: 11.5%;
+  width: 10%;
+  height: 9%;
+  border: 0px inset rgb(195, 22, 129); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.unit_row_title {
+  position: absolute;
+  left: 67%;
+  top: 9.5%;
+  width: 13%;
+  height: 1.5%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align:center;
+}
+
+.unit_row {
+  position: absolute;
+  left: 67%;
+  top: 11.5%;
+  width: 13%;
+  height: 3%;
+  border: 0px inset rgb(195, 22, 129); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.gender_row_title {
+  position: absolute;
+  left: 1.75%;
+  top: 41.5%;
+  width: 21%;
+  height: 1%;
+  background-color: white;
+  border: 0px  outset rgb(52, 159, 192);
+  font-family: Avenir;
+  font-size: small;
+  text-align: left;
+}
+
+.gender_row {
+  position: absolute;
+  left: 5.5%;
+  top: 40.5%;
+  width: 17.5%;
+  height: 1%;
+  background-color: white;
+  border: 0px  outset rgb(52, 159, 192);
+  font-family: Avenir;
+  font-size: small;
+  text-align: left;
+}
+
+.date_range_title {
+  position: absolute;
+  left: 82.5%;
+  top: 9.5%;
+  width: 14%;
+  height: 0%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.date_range {
+  position: absolute;
+  left: 82.5%;
+  top: 11.5%;
+  width:14%;
+  height: 3%;
+  font-family: Avenir;
+  font-size: x-small;
+  text-align: center;
+}
+
+.scale_row {
+  position: absolute;
+  left: 69%;
+  top: 17%;
+  width: 5.5%;
+  height: 4%;
+  border: 0px solid rgb(88, 88, 88); 
+  font-family: Avenir;
+  font-size: medium;
+  text-align: left;
+}
+
+.rug_row {
+  position: absolute;
+  left: 75%;
+  top: 17%;
+  width: 4.5%;
+  height: 4%;
+  font-family: Avenir;
+  font-size: medium;
+  text-align: left;
+}
+
+.select_reverse_axis {
+  position: absolute;
+  left: 75%;
+  top: 19%;
+  width: 6.5%;
+  height: 4%;
+  font-family: Avenir;
+  font-size: medium;
+  text-align: left;
+}
+
+.trend_row_title {
+  position: absolute;
+  left: 54.5%;
+  top: 9.5%;
+  width: 10%;
+  height: 1.5%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: small;
+  text-align:center;
+}
+
+.trend_row {
+  position: absolute;
+  left: 54.5%;
+  top: 11.5%;
+  width: 10%;
+  height: 9%;
+  border: 0px inset rgb(195, 22, 129); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.forecast_row_title {
+  position: absolute;
+  left: 54.5%;
+  top: 16.5%;
+  width: 10%;
+  height: 9%;
+  border: 0px inset rgb(195, 22, 129); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: left;
+}
+
+.forecast_row {
+  position: absolute;
+  left: 52.5%;
+  top: 18.5%;
+  width: 16.5%;
+  height: 2%;
+  display: inline-block;
+  font-family: Avenir;
+
+}
+
+.date_grad_hist {
+  position: absolute;
+  left: 25%;
+  top: 95%;
+  width: 50%;
+  height: 1%;
+  border: 0px inset rgb(154, 194, 230); 
+  display: inline-block;
+  font-family: Avenir;
+  font-size: small;
+  text-align: center;
+}
+
+.select_table {
+  position: absolute;
+  left: 90%;
+  top: 26%;
+  width: 8.5%;
+  height: 1%;
+  background-color: transparent;
+  font-family: Avenir;
+  font-size: medium;
+  text-align: left;
+}
+
+.main_graph {
+  position: absolute;
+  left: 24.5%;
+  top: 24%;
+  width: 65%;
+  height: 10%;
+}
