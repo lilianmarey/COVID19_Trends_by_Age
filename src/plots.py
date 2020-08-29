@@ -13,7 +13,7 @@ import plotly.express as px
 
 from src.mysettings import label_dic, months_list, code_state, code_country, firsts_of_the_month
 from src.helpers import select_data, regions_of_country, dfadaptDateRange,computeDateFormat, regression, computeDatecode, adaptDataframeHistogram, ageRange, regression_histogram
-from src.preprocess import divide_US_Dataframe, delete_multiple_sources
+from src.preprocess import divide_US_Dataframe
 
 
 
@@ -647,6 +647,7 @@ def plot_world_map(df, age, gender, metric, selected_unit, end_date):
     for col in df2.columns:
         df2[col] = df2[col].astype(str)
 
+    print(metric)
     df2['text'] = df2['Country'] + '<br>' + 'Value : ' + df2['Value']  + '<br>' + df2['Date'] + '<br>' + metric
 
     fig = go.Figure(

@@ -10,21 +10,27 @@ import dash_core_components as dcc
 from dash.dependencies import Input, Output
 import dash_html_components as html
 
+from sys import exit
 from datetime import date
+import pandas as pd
 
 from src.mysettings import months_list, firsts_of_the_month
 from src.helpers import regions_of_country, regionError, adaptMetricsInterval
-import src.preprocess as pp
+from src.preprocess import label_gender
 import src.plots as plt 
 
 ##########################################
 # Import needed data
 
-print('data importation : ')
+print('Computed data importation : ')
+try:
+    df = pd.read_csv('data/preprocessed_data.csv')
+    df = df[df['Country'] != 'UK']
+except:
+    print('data not found, please preprocess data before launching the app')
+    exit()
 
-df, pop_by_country, pop_usa_states, label_gender, code_state, code_country = pp.dataPreprocessed()
-
-print('done')
+print('Done')
 
 ##########################################
 # Create the hole app layout
@@ -33,20 +39,6 @@ app = dash.Dash(__name__)
 
 app.layout = html.Div(
     [
-        html.Div(
-            className = 'fill_void'
-            ),  
-
-     html.Div(
-         [
-             html.Img(
-                 src = '/assets/logo3.png', 
-                 style = {'height':'100%', 'width':'100%'}
-                 )
-        ],
-        className = 'logo0'
-            ), 
-
      html.Div(
          [
              html.H2(
@@ -78,7 +70,7 @@ app.layout = html.Div(
     html.Div(
         [
             dcc.Markdown('''
-            [About this project](https://dev.azure.com/LMAREY/Covid_age)          
+            [About this project](https://github.com/lilianmarey/COVID19_Trends_by_Age)          
             [About the COVerAGE project](https://github.com/timriffe/covid_age) \n         
             [Download the complete COVerAge dataset](https://osf.io/mpwjq/)
             ''') 
@@ -594,9 +586,16 @@ def second_checklist_callback(selected_countries):
     options : dict list
         the "options" argument of the regions checklist
     """
-    if selected_countries == None:
-        selected_countries = ['USA']
-    regions_list = regions_of_country(df, selected_countries)
+    if isinstance(selected_countries, unicode) or isinstance(selected_countries, str):
+        C = [selected_countries]
+    else:
+        C = selected_countries
+    if selected_countries in [[], None]:
+        C = ['France']
+    else:
+        pass
+
+    regions_list = regions_of_country(df, C)
     options = [{'label' : 'All regions', 'value' : 'All_regions'}] + [{'label' : i, 'value' : i} for i in regions_list]
 
     return options
@@ -690,20 +689,22 @@ def graph_callback(
     fig : plotly Figure
         the corresponding plot
     """
-    if isinstance(selected_countries, str):
+    if isinstance(selected_countries, unicode) or isinstance(selected_countries, str):
         C = [selected_countries]
     else:
         C = selected_countries
+    print(C)
     if selected_countries in [[], None]:
         C = ['France']
     else:
         pass
 
-    if isinstance(selected_regions, str):
+    if isinstance(selected_regions, unicode) or isinstance(selected_regions, str):
         R = [selected_regions]
     else:
         R = selected_regions
-    if selected_regions in [[], None] or regionError(df, selected_countries, R):
+    print(C)
+    if selected_regions in [[], None] or regionError(df, C, R):
         R = ['All']
     elif 'All_regions' in selected_regions:
         regions_list = list(regions_of_country(df, C))
@@ -725,7 +726,7 @@ def graph_callback(
     else:
         pass
 
-    if isinstance(selected_metrics, str):
+    if isinstance(selected_metrics, unicode) or isinstance(selected_metrics, str):
         M = [selected_metrics]
     else:
         M = selected_metrics
@@ -739,8 +740,8 @@ def graph_callback(
     else:
         S = True
 
-    if isinstance(selected_genders, str):
-        G = [selected_genders]
+    if isinstance(selected_genders, unicode) or isinstance(selected_genders, str):
+            G = [selected_genders]
     else:
         G = selected_genders
     if selected_genders in [[], None]:

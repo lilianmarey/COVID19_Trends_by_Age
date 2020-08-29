@@ -1,4 +1,4 @@
-# COVID-AGE
+# COVID19: Trends by Age
 
 Dash-based app
 
@@ -20,7 +20,7 @@ Marius Pascariu
 
 # STRUCTURE OF PROJECT
 
-Covid_age
+COVID19_Trends_by_Age
 
     |
     |
@@ -35,14 +35,12 @@ Covid_age
     |
     |---- documentation  : Documentation (resources, codebook)
     |
-    |---- notebooks      : For experimentation and fast iterations 
-    |
     |---- assets         : deals with the front end presentation
     |
     |---- src            : Documented scripts after iterations 
     |
-    |---- tests          : Tests for developed functions
-    |
     |---- app.py         : Web app in Dash 
+    |
+    |---- data_preprocessing.py         : Data processor to run before launching the app
     |
     |____ README.md      
