@@ -2,9 +2,12 @@
 
 Dash-based app
 
-data_preprocessing.py and app.py can be run from terminal :
-        - data_preprocessing.py creates a CSV file in /data/ folder that can be used by the app
-        - app.py launches the application using the CSV file created by data_preprocessing.py
+app.py can be run from terminal : it launches the application using the CSV file /data/data_preprocessed.py
+
+Last processed data dates 2020/08/17
+
+Ask me if you want me to process more recent data !
+However you can do it by yourself with data_preprocessing.py (can be run from cmd, creates data/data_preprocessed_test.py) 
 
 The file /data/preprocessed_data.csv is an example of whole database processing (it takes time to compute).
 
