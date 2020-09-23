@@ -586,7 +586,7 @@ def second_checklist_callback(selected_countries):
     options : dict list
         the "options" argument of the regions checklist
     """
-    if isinstance(selected_countries, str):
+    if isinstance(selected_countries, str) or isinstance(selected_countries, unicode):
         C = [selected_countries]
     else:
         C = selected_countries
@@ -689,7 +689,7 @@ def graph_callback(
     fig : plotly Figure
         the corresponding plot
     """
-    if isinstance(selected_countries, str):
+    if isinstance(selected_countries, str) or isinstance(selected_countries, unicode):
         C = [selected_countries]
     else:
         C = selected_countries
@@ -713,7 +713,7 @@ def graph_callback(
     else:
         pass
 
-    if  isinstance(selected_ages, int):
+    if  isinstance(selected_ages, int) or isinstance(selected_ages, unicode):
         A = [selected_ages]
     else:
         A = selected_ages
@@ -724,7 +724,7 @@ def graph_callback(
     else:
         pass
 
-    if isinstance(selected_metrics, str):
+    if isinstance(selected_metrics, str) or isinstance(selected_metrics, unicode):
         M = [selected_metrics]
     else:
         M = selected_metrics
@@ -738,7 +738,7 @@ def graph_callback(
     else:
         S = True
 
-    if isinstance(selected_genders, str):
+    if isinstance(selected_genders, str) or isinstance(selected_genders, unicode):
             G = [selected_genders]
     else:
         G = selected_genders
