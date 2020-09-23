@@ -647,7 +647,6 @@ def plot_world_map(df, age, gender, metric, selected_unit, end_date):
     for col in df2.columns:
         df2[col] = df2[col].astype(str)
 
-    print(metric)
     df2['text'] = df2['Country'] + '<br>' + 'Value : ' + df2['Value']  + '<br>' + df2['Date'] + '<br>' + metric
 
     fig = go.Figure(

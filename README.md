@@ -55,3 +55,15 @@ COVID19_Trends_by_Age
     |---- data_preprocessing.py         : Data processor to run before launching the app
     |
     |____ README.md      
+
+# Screenshots
+
+## Charts
+![](documentation/screenshots/screenshot_charts.png)
+
+## Histogram
+![](documentation/screenshots/screenshot_histogram.png)
+
+## Maps
+![](documentation/screenshots/screenshot_world_map.png)
+![](documentation/screenshots/screenshot_USA_map.png)
