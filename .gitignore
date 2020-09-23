@@ -1,3 +1,8 @@
+# Ignore files from data/ directory
+data/*.zip
+data/*_France*
+data/*_old*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
