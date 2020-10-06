@@ -681,3 +681,51 @@ def plot_world_map(df, age, gender, metric, selected_unit, end_date):
                     )
 
     return fig
+
+def build_download_file(df, countries_list, regions_list, ages_list, genders_list, 
+                metrics, start_date, end_date
+                ):
+
+
+    if 'All' in regions_list and ('UK' in countries_list) :
+            # df0 = delete_multiple_sources(df, ages_list, genders_list)
+            df0 = df
+    else:
+        df0 = df
+
+    df0 = select_data(
+                        df, 
+                        countries_list, 
+                        regions_list, 
+                        ages_list, 
+                        genders_list
+                    )
+    
+    df0 = dfadaptDateRange(df0, start_date, end_date)
+    df0 = df0[df0['Metric'].isin(metrics)]
+    
+    df0 = df0[['Date_format', 'Metric', 'Value', 'Country', 'Region', 'Age', 'Sex']]
+
+    print(df0.head())
+
+    # elif table_option:
+    #     fig = go.Figure(data=
+    #                         [
+    #                             go.Table(header = dict( 
+    #                                                     values = list(['Date', 'Metric', 'Value', 'Country', 'Region', 'Age', 'Gender']),
+    #                                                     fill_color = 'rgba(0,131,138,0.5)',
+    #                                                 ),
+    #                                     cells = dict(
+    #                                                 values=[df0.Date_format, df0.Metric, df0.Value, df0.Country, df0.Region, df0.Age, df0.Sex],
+    #                                                 fill_color = 'white',
+    #                                                 )
+    #                                     )
+    #                         ]
+    #                     ) 
+
+        # fig.update_layout(autosize=False,
+        #                 width= 1425,
+        #                 height=710,
+        #                 )
+
+    return None

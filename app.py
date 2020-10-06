@@ -61,6 +61,8 @@ app.layout = html.Div(
              ),
 
      html.Div(
+        id = 'test',
+        children =
          [
              html.H5(children = 'COVID-19 Web App')
         ],
@@ -444,6 +446,94 @@ app.layout = html.Div(
     ]
                 )
 
+
+@app.callback(
+    Output('test', component_property = 'style'),
+    [
+    Input('country_checklist', 'value'), 
+    Input('region_checklist', 'value'), 
+    Input('age_checklist', 'value'), 
+    Input('metric_checklist', 'value'),
+    Input('time_scale_checklist', 'value'), 
+    Input('scale_option', 'value'), 
+    Input('gender_checklist', 'value'),
+    Input('map_button', 'value'), 
+    Input('date_range', 'start_date'), 
+    Input('date_range', 'end_date'), 
+    Input('rug_checklist', 'value'),
+    Input('reverse_axis_button', 'value'),
+    Input('trend_checklist', 'value'),
+    Input('forecast_slider', 'value'),
+    Input('unit_checklist', 'value'),
+    Input('table_button', 'value'),
+    Input('date_grad_hist_slider', 'value'),
+    Input('download_button', 'n_clicks')
+    ]
+            )
+def download_callback(
+    selected_countries, selected_regions, selected_ages, 
+    selected_metrics, selected_interval, selected_scale,
+    selected_genders, selected_graph, start_date, end_date, 
+    rug_value, reverse_axis_value, selected_trend, forecast, 
+    selected_unit, chart_or_table, hist_end_date, click
+                ):
+    if isinstance(selected_countries, str) or isinstance(selected_countries, unicode):
+        C = [selected_countries]
+    else:
+        C = selected_countries
+    if selected_countries in [[], None]:
+        C = ['France']
+    else:
+        pass
+
+    if isinstance(selected_regions, str):
+        R = [selected_regions]
+    else:
+        R = selected_regions
+    if selected_regions in [[], None] or regionError(df, C, R):
+        R = ['All']
+    elif 'All_regions' in selected_regions:
+        regions_list = list(regions_of_country(df, C))
+        if regions_list == []:
+            R = ['All']
+        else:
+            R = regions_list
+    else:
+        pass
+
+    if  isinstance(selected_ages, int) or isinstance(selected_ages, unicode):
+        A = [selected_ages]
+    else:
+        A = selected_ages
+    if selected_ages in [[], None]:
+        A = [i * 10 for i in range(4, 9)]
+    elif 888 in A:
+        A = [10 * i for i in range(11)]
+    else:
+        pass
+
+    if isinstance(selected_metrics, str) or isinstance(selected_metrics, unicode):
+        M = [selected_metrics]
+    else:
+        M = selected_metrics
+    if selected_metrics in [[], None]:
+        M = ['Deaths']
+    else:
+        M = adaptMetricsInterval(M, selected_interval)
+
+    if isinstance(selected_genders, str) or isinstance(selected_genders, unicode):
+            G = [selected_genders]
+    else:
+        G = selected_genders
+    if selected_genders in [[], None]:
+        G = ['b']
+    else:
+        pass
+
+    plt.build_download_file(df, C, R, A, G, M, 
+                                start_date, end_date)
+
+    return [{'opacity': 1}]
 
 @app.callback(
     [
