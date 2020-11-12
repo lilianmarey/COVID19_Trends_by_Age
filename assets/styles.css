@@ -500,6 +500,17 @@ hr {
   text-align: left;
 }
 
+.download_button {
+  position: absolute;
+  left: 25%;
+  top: 88%;
+  width: 15%;
+  height: 3%;
+  background-color: transparent;
+}
+
+
+
 .main_graph {
   position: absolute;
   left: 24.5%;
