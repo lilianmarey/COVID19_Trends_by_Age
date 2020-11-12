@@ -449,10 +449,11 @@ app.layout = html.Div(
 
 @app.server.route('/dash/urlToDownload') 
 def download_csv():
-    return send_file('data/datatest.csv',
-                     mimetype='text/csv',
-                     attachment_filename='datatest.csv',
-                     as_attachment=True)
+
+    return send_file('data/download/data_download.csv',
+                     mimetype = 'text/csv',
+                     attachment_filename = 'data_download.csv',
+                     as_attachment = True)
 
 @app.callback(
     [

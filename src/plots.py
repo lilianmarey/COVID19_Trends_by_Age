@@ -91,6 +91,8 @@ def plot_metrics(df, countries_list, regions_list, ages_list, genders_list,
     
     df0 = dfadaptDateRange(df0, start_date, end_date)
     df0 = df0[df0['Metric'].isin(metrics)]
+
+    df0[['Date_format', 'Metric', 'Value', 'Country', 'Region', 'Age', 'Sex']].to_csv('data/download/data_download.csv')
     
     if df0.empty:
         fig = go.Figure(
