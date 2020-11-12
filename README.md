@@ -39,6 +39,8 @@ COVID19_Trends_by_Age
 
             |
             |
+            |--- download                   : Databases to be downloaded 
+            |
             |--- population_datasets        : Databases used for weighting
             |
             |--- Output_10.csv              : The main database with the number of cases, deaths, tests, etc. by age and region
