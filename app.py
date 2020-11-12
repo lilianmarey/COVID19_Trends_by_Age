@@ -409,7 +409,7 @@ app.layout = html.Div(
         id = 'download_button',
         style = {'display': 'block'},
         children = [
-                    dcc.Link('Download data', href = '/dash/urlToDownload')
+                   dcc.Markdown('[Download data](/dash/download)')  
                     ],
         className = 'download_button'
         ), 
@@ -447,7 +447,7 @@ app.layout = html.Div(
                 )
 
 
-@app.server.route('/dash/urlToDownload') 
+@app.server.route('/dash/download') 
 def download_csv():
 
     return send_file('data/download/data_download.csv',
