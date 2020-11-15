@@ -43,7 +43,7 @@ print('Taking subset of data for experimentation...')
 # for quick tests
 
 df_harmonised = df_harmonised[df_harmonised['Country'].isin(
-        ['Zambia', 'Austria', 'Germany', 'Denmark', 'Kazakhstan', 'Kyrgyzstan', 'Greece', 'Honduras', 'Mexico', 'United Kingdom']
+        ['Zambia', 'Austria', 'Denmark', 'Kazakhstan', 'Kyrgyzstan', 'Greece', 'Honduras', 'United Kingdom', 'Northern Ireland', 'Paraguay', 'Botswana']
         )]
 # df_harmonised = df_harmonised[df_harmonised['Region'].isin(['Corse'])]
 # df_harmonised = df_harmonised[df_harmonised['Sex'].isin(['b'])]
