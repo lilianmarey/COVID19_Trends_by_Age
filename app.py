@@ -302,7 +302,7 @@ app.layout = html.Div(
             dcc.DatePickerRange(
                 id = 'date_range',
                 start_date = date(2020, 1, 1),
-                end_date = date(2020, 8, 6),
+                end_date = date(2020, 11, 17),
                 min_date_allowed = date(2020, 1, 1),
                 display_format = 'MM DD YYYY',
                 initial_visible_month = '2020 08 07'                     
@@ -422,12 +422,12 @@ app.layout = html.Div(
                             id='date_grad_hist_slider',
                             # marks={30*i: 'gap in day = {}'.format(30*i) for i in range(7)},
                             min = 0,
-                            max = 246,
-                            value = 230,
-                            step = 7,
+                            max = 330,
+                            value = 330,
+                            step = 9,
                             updatemode = 'drag',
                             marks = {
-                                    firsts_of_the_month[i] : months_list[i] + ' 2020' for i in range(9)
+                                    firsts_of_the_month[i] : months_list[i] + ' 2020' for i in range(12)
                                     }                           
                                 )
                     ],
@@ -596,7 +596,7 @@ def second_checklist_callback(selected_countries):
     options : dict list
         the "options" argument of the regions checklist
     """
-    if isinstance(selected_countries, str) or isinstance(selected_countries, unicode):
+    if isinstance(selected_countries, str) or isinstance(selected_countries, str):
         C = [selected_countries]
     else:
         C = selected_countries
@@ -699,7 +699,7 @@ def graph_callback(
     fig : plotly Figure
         the corresponding plot
     """
-    if isinstance(selected_countries, str) or isinstance(selected_countries, unicode):
+    if isinstance(selected_countries, str) or isinstance(selected_countries, str):
         C = [selected_countries]
     else:
         C = selected_countries
@@ -723,7 +723,7 @@ def graph_callback(
     else:
         pass
 
-    if  isinstance(selected_ages, int) or isinstance(selected_ages, unicode):
+    if  isinstance(selected_ages, int) or isinstance(selected_ages, str):
         A = [selected_ages]
     else:
         A = selected_ages
@@ -734,7 +734,7 @@ def graph_callback(
     else:
         pass
 
-    if isinstance(selected_metrics, str) or isinstance(selected_metrics, unicode):
+    if isinstance(selected_metrics, str) or isinstance(selected_metrics, str):
         M = [selected_metrics]
     else:
         M = selected_metrics
@@ -748,7 +748,7 @@ def graph_callback(
     else:
         S = True
 
-    if isinstance(selected_genders, str) or isinstance(selected_genders, unicode):
+    if isinstance(selected_genders, str) or isinstance(selected_genders, str):
             G = [selected_genders]
     else:
         G = selected_genders
