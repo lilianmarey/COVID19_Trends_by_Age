@@ -4,7 +4,7 @@ Dash-based app
 
 app.py can be run from terminal : it launches the application using the CSV file /data/data_preprocessed.py
 
-Last processed data dates 2020/08/17
+Last processed data dates 2020/11/10
 
 Ask me if you want me to process more recent data !
 
