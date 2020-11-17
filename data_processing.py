@@ -40,6 +40,11 @@ print('Taking subset of data for experimentation...')
 
 # for processing the hole data : no selection
 
+df_harmonised = df_harmonised[df_harmonised['Country'].isin(['USA'])]
+
+df_harmonised = df_harmonised[df_harmonised['Region'].isin(['Ohio'])]
+
+# 'North Dakota', 'Ohio', 'Oklahoma'
 
 # for quick tests
 
@@ -171,7 +176,7 @@ df_harmonised['Value_by_pop'] = df_harmonised.apply(computeValuebyPop, axis = 1)
 
 PATH = pathlib.Path(__file__).parent
 
-df_harmonised.to_csv(str(PATH) + '/data/preprocessed_data_update.csv')
+df_harmonised.to_csv(str(PATH) + '/data/preprocessed_data_update_6.csv')
 
 print('File created')
 
