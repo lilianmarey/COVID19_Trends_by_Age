@@ -588,7 +588,7 @@ def plot_world_map(df, age, gender, metric, selected_unit, end_date):
                         )
                     )
 
-    for country in ['England', 'Scotland', 'Northern Ireland', 'Senegal', 'Eswatini']: # England, Scotland, N. Ireland are already in UK country
+    for country in ['England and Wales', 'England', 'Scotland', 'Northern Ireland', 'Senegal', 'Eswatini']: # England, Scotland, N. Ireland are already in UK country
         try:
             Countries.remove(country)
 

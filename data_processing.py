@@ -40,12 +40,12 @@ print('Taking subset of data for experimentation...')
 
 # for processing the hole data : no selection
 
+
 # for quick tests
 
-df_harmonised = df_harmonised[df_harmonised['Country'].isin(['France'])]
-df_harmonised = df_harmonised[df_harmonised['Region'].isin(['Corse'])]
-df_harmonised = df_harmonised[df_harmonised['Sex'].isin(['b'])]
-df_harmonised = df_harmonised[df_harmonised['Age'].isin([80])]
+# df_harmonised = df_harmonised[df_harmonised['Region'].isin(['Corse'])]
+# df_harmonised = df_harmonised[df_harmonised['Sex'].isin(['b'])]
+# df_harmonised = df_harmonised[df_harmonised['Age'].isin([80])]
 
 
 # for an histogram
@@ -171,7 +171,7 @@ df_harmonised['Value_by_pop'] = df_harmonised.apply(computeValuebyPop, axis = 1)
 
 PATH = pathlib.Path(__file__).parent
 
-df_harmonised.to_csv(str(PATH) + '/data/preprocessed_data_test.csv')
+df_harmonised.to_csv(str(PATH) + '/data/preprocessed_data_update.csv')
 
 print('File created')
 
